@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   postgres:
-    container_name: shop-db
+    container_name: config-db
     image: postgres:12-alpine
     environment:
       - POSTGRES_DB
@@ -12,7 +12,7 @@ services:
     ports:
       - "5435:5433"
   app:
-    container_name: shop-app
+    container_name: config-app
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:

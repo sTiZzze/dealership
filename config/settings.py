@@ -35,9 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dealership.apps.DealershipConfig',
+    'src.dealership.apps.DealershipConfig',
     'rest_framework',
-
 ]
 
 MIDDLEWARE = [
@@ -50,12 +49,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'shop.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'shop']
+        'DIRS': [BASE_DIR / 'config']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -69,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'shop.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
@@ -148,7 +147,7 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=7),
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
-    'ISSUER': 'shop',
+    'ISSUER': 'config',
     'SIGNING_KEY': env('SECRET_KEY')
 }
 
